@@ -28,6 +28,9 @@ func game_over() -> void:
 		
 	$HUD.show_game_over(record)
 	
+	$AudioStreamPlayer.stop()
+	$DeathSound.play()
+	
 func new_game():
 	$MobTimer.stop()
 	$ScoreTimer.stop()
@@ -39,6 +42,8 @@ func new_game():
 	$HUD.show_message("Get Ready")
 	$Player.start($StartPosition.position)
 	$StartTimer.start()
+	
+	$AudioStreamPlayer.play()
 
 
 func _on_mob_timer_timeout() -> void:
