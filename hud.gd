@@ -18,13 +18,13 @@ func show_message(text):
 
 func show_game_over(record):
 	$ScoreLabel.hide()
-	show_message("Game Over")
+	show_message(tr("GAME_OVER"))
 	# Wait until the MessageTimer has counted down.
 	await $MessageTimer.timeout
 
-	$Message.text = "Dodge the Creeps!"
+	$Message.text = tr("GAME_TITLE")
 	$Message.show()
-	$Record.text = "Record: " + str(record)
+	$Record.text = (tr("RECORD")) + str(record)
 	$Record.show()
 	# Make a one-shot timer and wait for it to finish.
 	await get_tree().create_timer(1.0).timeout
@@ -43,7 +43,7 @@ func _on_message_timer_timeout():
 
 func show_start_screen(record):
 	$ScoreLabel.hide()
-	$Record.text = "Record: " + str(record)
+	$Record.text = (tr("RECORD")) + str(record)
 	$Record.show()
 	$StartButton.show()
 

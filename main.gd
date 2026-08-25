@@ -8,6 +8,7 @@ var record = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	#TranslationServer.set_locale("de")
 	load_record()
 	$HUD.show_start_screen(record)
 	#new_game()
@@ -39,7 +40,10 @@ func new_game():
 	
 	score = 0
 	$HUD.show_game_hud(score)
-	$HUD.show_message("Get Ready")
+	
+	#$HUD.show_message("Get Ready")
+	$HUD.show_message(tr("GET_READY"))
+	
 	$Player.start($StartPosition.position)
 	$StartTimer.start()
 	

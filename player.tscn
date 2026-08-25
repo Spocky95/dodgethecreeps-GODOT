@@ -40,7 +40,7 @@ script = ExtResource("1_sweqy")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=957808154]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.135, 0.135)
 sprite_frames = SubResource("SpriteFrames_u0ya7")
 animation = &"up"
 
